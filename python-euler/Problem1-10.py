@@ -125,5 +125,7 @@ data = helpers.time_func(partial(solution3_1, 13_195)) # to slow, not optimized
 helpers.print_data(data, 3)
 data = helpers.time_func(partial(solution3_2, 13_195)) # better, optimized
 helpers.print_data(data, 3)
+data = helpers.time_func(partial(solution3_3, 13_195)) # faster, using math and optimized
+helpers.print_data(data, 3)
 data = helpers.time_func(partial(solution3_3, 600_851_475_143)) # faster, using math and optimized
 helpers.print_data(data, 3)
