@@ -129,3 +129,25 @@ data = helpers.time_func(partial(solution3_3, 13_195)) # faster, using math and 
 helpers.print_data(data, 3)
 data = helpers.time_func(partial(solution3_3, 600_851_475_143)) # faster, using math and optimized
 helpers.print_data(data, 3)
+
+"""
+Link: https://projecteuler.net/problem=4
+Largest Palindrome Product
+Problem 4
+A palindromic number reads the same both ways. The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 x 99.
+Find the largest palindrome made from the product of two 3-digit numbers.
+"""
+def solution4(number):
+    """find largest palindromic number that is the product of two X-digit numbers."""
+    start = "1" + ("0" * (number-1))
+    stop = "9" * number
+    li = []
+    for i in range(int(start), int(stop)+1):
+        for j in range(int(start), int(stop)+1):
+            x = i*j
+            if str(x) == str(x)[::-1]:
+                li.append(x)
+    return max(li)
+
+data = helpers.time_func(partial(solution4, 3))
+helpers.print_data(data, 4)
