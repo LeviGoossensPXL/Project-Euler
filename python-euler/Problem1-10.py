@@ -151,3 +151,30 @@ def solution4(number):
 
 data = helpers.time_func(partial(solution4, 3))
 helpers.print_data(data, 4)
+
+"""
+Link: https://projecteuler.net/problem=5
+Smallest Multiple
+Problem 5
+2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.
+What is the smallest positive number that is divisible with no remainder by all of the numbers from 1 to 20?
+"""
+
+def solution5(numbers):
+    """find smallest positive number that is divisible with no remainder by all of the given numbers"""
+    smallest_multiple = 1
+    while True:
+        is_divisible = True
+        for number in numbers:
+            if smallest_multiple % number != 0:
+                is_divisible = False
+                break
+        if is_divisible:
+            break
+        smallest_multiple += 1
+    return smallest_multiple
+
+data = helpers.time_func(partial(solution5, list(range(1, 11))))
+helpers.print_data(data, 5)
+data = helpers.time_func(partial(solution5, list(range(1, 21))))
+helpers.print_data(data, 5)
